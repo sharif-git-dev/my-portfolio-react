@@ -1,0 +1,10 @@
+/* src/components/PortfolioSection.css */
+.portfolio-section {
+    padding: 30px;
+    background-color: #eaeaea;
+  }
+  
+  .portfolio-section h2 {
+    font-size: 2rem;
+  }
+  

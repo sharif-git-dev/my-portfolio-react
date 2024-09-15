@@ -1,0 +1,14 @@
+/* src/components/AboutSection.css */
+.about-section {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1rem;
+}
