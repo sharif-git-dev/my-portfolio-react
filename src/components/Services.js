@@ -5,10 +5,9 @@ import { Container, Row, Col} from 'react-bootstrap';
 
 const Services = ({ isVisible }) => {
   return (
-    <Container className='full-section'>
-
-      <div>
-
+    <div className='rounded-bottom-5 '>
+      <div className='full-section  container '>
+      <div className='position-absolute'>
       <h1 className='inline'>Services  </h1>  
       <h5 className='inline'>How I help</h5>  
        
@@ -34,11 +33,10 @@ const Services = ({ isVisible }) => {
         <p>Creating custom website that's fits your customers needs using research and designs processes</p>
        </Col>
       </Row>
-       
+     </div>   
       </div>
-
-
-    </Container>
+    </div>
+    
   );
 };
 

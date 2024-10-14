@@ -1,9 +1,9 @@
 // src/components/Navbar.js
-
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
 import './Navbar.css';
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -52,45 +52,44 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${showNavbar ? 'navbar-show' : 'navbar-hide'}`}>
+    <div className='bg-black'>
+    <div className= {`bg-transparent navbar ${showNavbar ? 'navbar-show' : 'navbar-hide' }`}>
+      <Container>
 
-<Container>
-<Row className="align-items-center justify-content-between">  
+        <Row className='w-100'>
+          <Col>
+            <div className='logo'>Sharif</div>
+          </Col>
 
-  <Col className="text-left">
-    <div className="navbar-brand">Sharif Jamo</div>
-  </Col>
+          <Col className="text-end">
+            {isMobileView ? (
+              <div className="navbar-drawer-icon" onClick={toggleDrawer}>
+                <FaBars size={24} />
+              </div>
+            ) : (
+              <ul className="navbar-links link_underline">
+                <li><Link to="home" smooth duration={500}>Home</Link></li>
+                <li><Link to="portfolio" smooth duration={500}>Portfolio</Link></li>
+                <li><Link to="about" smooth duration={500}>About</Link></li>
+                <li><Link to="contact" smooth duration={500}>Contact</Link></li>
+              </ul>
+            )}
+          </Col>
+        </Row>
 
-  {/* Links or Drawer Icon on the right */}
-  <Col  className="text-right">  
-    {isMobileView ? (
-      <div className="navbar-drawer-icon" onClick={toggleDrawer}>
-        <FaBars size={24} />
-      </div>
-    ) : (
-      <ul className="navbar-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    )}
-  </Col>
-</Row>
-
-
-  {/* Drawer menu for mobile */}
-  <div className={`navbar-drawer ${isDrawerOpen ? 'navbar-drawer-open' : ''}`}>
-    <ul className="drawer-links">
-      <li><a href="#home" onClick={toggleDrawer}>Home</a></li>
-      <li><a href="#about" onClick={toggleDrawer}>About</a></li>
-      <li><a href="#portfolio" onClick={toggleDrawer}>Portfolio</a></li>
-      <li><a href="#contact" onClick={toggleDrawer}>Contact</a></li>
-    </ul>
-  </div>
-</Container>
-
-    </nav>
+        {/* Drawer menu for mobile */}
+        <div className={`navbar-drawer ${isDrawerOpen ? 'navbar-drawer-open' : ''}`}>
+          <ul className="drawer-links">
+            <li><Link to="home" smooth duration={500} onClick={toggleDrawer}>Home</Link></li>
+            <li><Link to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Link></li>
+            <li><Link to="about" smooth duration={500} onClick={toggleDrawer}>About</Link></li>
+            <li><Link to="contact" smooth duration={500} onClick={toggleDrawer}>Contact</Link></li>
+          </ul>
+        </div>
+      </Container>
+    </div>
+    </div>
+    
   );
 };
 

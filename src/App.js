@@ -1,36 +1,41 @@
 // src/App.js
 import React from 'react';
 import Services from './components/Services';
-import PortfolioSection from './components/PortfolioSection';
+import AboutSection from './components/AboutSection';
+import Contactme from './components/Contactme';
 import Works from './components/Works';
 import Footer from './components/Footer';
 import Question from './components/Question';
 import Navbar from './components/Navbar';
-import Header from './components/Headerc';
+import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
-
+import { Link, Element } from 'react-scroll';
 
 const App = () => {
   return (
-    <div className="App " >
-      <Navbar /> 
-      {/* Header */}
-      <Header />
-      {/* question  */}
-      <Question />
-      {/* services */}
-      <Services />
-      {/* works */}
-      <Works  />
-      {/* about me */}
-      
-      <PortfolioSection />
-      {/* Testimonials */}     
-      <PortfolioSection />
-      {/* why work with me? */}
-      <PortfolioSection />
-      {/* contact */}
+    <div className="App bg-black">
+      <Navbar />
+      <div className="snap-container">
+        <Element name="home" id="home">
+          <Header />
+        </Element>
+        <Element name="question" id="question">
+          <Question />
+        </Element>
+        <Element name="services" id="services">
+          <Services />
+        </Element>
+        <Element name="portfolio" id="portfolio">
+          <Works />
+        </Element>
+        <Element name="about" id="about">
+          <AboutSection />
+        </Element>
+        <Element name="contact" id="contact">
+          <Contactme />
+        </Element>
+      </div>
       <Footer />
     </div>
   );

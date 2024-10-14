@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbb4ba74.css",
-    "main.js": "/static/js/main.835a261c.js",
-    "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
+    "main.css": "/static/css/main.1cc9dc3a.css",
+    "main.js": "/static/js/main.78d88c70.js",
+    "static/media/sorcero.jpg": "/static/media/sorcero.3436a19a7da0c13b8bf5.jpg",
     "index.html": "/index.html",
-    "main.cbb4ba74.css.map": "/static/css/main.cbb4ba74.css.map",
-    "main.835a261c.js.map": "/static/js/main.835a261c.js.map",
-    "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
+    "main.1cc9dc3a.css.map": "/static/css/main.1cc9dc3a.css.map",
+    "main.78d88c70.js.map": "/static/js/main.78d88c70.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbb4ba74.css",
-    "static/js/main.835a261c.js"
+    "static/css/main.1cc9dc3a.css",
+    "static/js/main.78d88c70.js"
   ]
 }

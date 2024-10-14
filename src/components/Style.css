@@ -44,3 +44,96 @@ display: inline;
 .sorcero {
   background-image: url(../assets/sorcero.jpg);
 }
+
+/* TextScroll.css */
+.scroll-container {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Ensures text stays on a single line */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  border: 1px solid #ccc; /* Optional: border to indicate the scrollable area */
+  padding: 10px; /* Optional: add padding to the container */
+}
+
+.scroll-text {
+  font-size: 24px; /* Adjust the size */
+  display: inline-block; /* Make text scroll horizontally */
+  min-width: 100%; /* Ensure the text takes the full width initially */
+}
+
+
+.section1 {
+  height: 400vh; 
+}
+
+
+.qh2 {
+  font-size: 7rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  color: white;
+  font-family: Nunito;
+}
+.qh2s {
+  font-size: 3.5rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  color: white;
+  font-family: Nunito;
+}
+
+.qh3 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: white;
+  font-weight: 100;
+  font-family: Nunito;
+}
+
+.qh4 {
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: white;
+  font-weight: 100;
+  line-height: 10px;
+  font-family: Nunito;
+}
+
+
+.Question1 {
+  font-size: 10rem;
+  font-family: Nunito;
+}
+
+
+.Question2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #212226;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  font-family: Nunito;
+}
+
+
+.Question3 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #212226;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  font-family: Nunito;
+}
+
+
+
+
+.logo {
+  font-size: 2rem;
+  font-family: Nunito;
+  font-weight: 200;
+}
