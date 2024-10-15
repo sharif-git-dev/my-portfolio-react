@@ -3,39 +3,116 @@ import React from 'react';
 import './Style.css';
 import { Container, Row, Col} from 'react-bootstrap';
 
-const Services = ({ isVisible }) => {
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useInView } from 'react-intersection-observer';  
+import { useRef } from "react";
+
+const Services = () => {
+  const TargetRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll ({
+    target: TargetRef,
+  })
+
+  const x = useTransform(scrollYProgress, [0,0.7], ["200%%", "-60%"]);
+ 
   return (
-    <div className='rounded-bottom-5 '>
-      <div className='full-section  container '>
+    <div className='servicesbg me-5 ms-5 rounded-bottom-5'>
+      <div className='container'>
+          <div  className='position-relative section1 pt-5 over'> 
+            <div className='position-sticky top-0 '>
+            <h1 className='inline Servicestxt '>Services  </h1>  
+            <h5 className='inline Question3 '>How I help</h5>   
+                <motion.Row style={{ x }}   className='d-flex  Question1 p-5 '>
+                <div className='p-4 descriptionwid'>
+                <h3>UI/UX Web and Mobile</h3>
+                <h5 className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</h5>
+                <div className='position-absolute '>
+                  <svg width="700" height="20" viewBox="0 -200 227 70" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="1" d="M26.2006 69.768C21.9766 69.768 18.2326 69.192 14.9686 68.04C11.7686 66.888 9.08063 65.192 6.90463 62.952C4.79263 60.648 3.16063 57.832 2.00863 54.504C0.920625 51.176 0.376626 47.336 0.376626 42.984V2.856C0.376626 2.152 0.536625 1.64 0.856625 1.32C1.24063 0.935997 1.75263 0.743998 2.39263 0.743998C3.03263 0.743998 3.51263 0.935997 3.83263 1.32C4.21663 1.64 4.40863 2.152 4.40863 2.856V42.408C4.40863 50.28 6.23263 56.168 9.88063 60.072C13.5926 63.912 19.0326 65.832 26.2006 65.832C33.4326 65.832 38.8726 63.912 42.5206 60.072C46.1686 56.168 47.9926 50.28 47.9926 42.408V2.856C47.9926 2.152 48.1526 1.64 48.4726 1.32C48.8566 0.935997 49.3686 0.743998 50.0086 0.743998C50.6486 0.743998 51.1286 0.935997 51.4486 1.32C51.8326 1.64 52.0246 2.152 52.0246 2.856V42.984C52.0246 48.744 51.0326 53.64 49.0486 57.672C47.1286 61.64 44.2486 64.648 40.4086 66.696C36.5686 68.744 31.8326 69.768 26.2006 69.768ZM65.2689 69.576C64.6929 69.576 64.2129 69.416 63.8289 69.096C63.5089 68.84 63.3169 68.52 63.2529 68.136C63.2529 67.688 63.4129 67.24 63.7329 66.792L88.1169 33.768V34.728L65.3649 3.816C64.9809 3.24 64.7889 2.728 64.7889 2.27999C64.8529 1.832 65.0449 1.48 65.3649 1.224C65.7489 0.903997 66.1649 0.743998 66.6129 0.743998C67.1249 0.743998 67.5409 0.839998 67.8609 1.032C68.2449 1.224 68.5969 1.576 68.9169 2.088L90.8049 31.848H89.6529L111.253 2.088C111.573 1.576 111.893 1.224 112.213 1.032C112.597 0.839998 113.045 0.743998 113.557 0.743998C114.069 0.743998 114.485 0.903997 114.805 1.224C115.125 1.48 115.285 1.832 115.285 2.27999C115.349 2.728 115.189 3.24 114.805 3.816L92.0529 34.728V33.768L116.437 66.792C116.757 67.24 116.885 67.688 116.821 68.136C116.821 68.52 116.629 68.84 116.245 69.096C115.925 69.416 115.477 69.576 114.901 69.576C114.517 69.576 114.101 69.448 113.653 69.192C113.269 69 112.917 68.68 112.597 68.232L89.0769 36.168H91.0929L67.5729 68.232C67.2529 68.68 66.8689 69 66.4209 69.192C66.0369 69.448 65.6529 69.576 65.2689 69.576Z" fill="#7A5C9D"/>
+                  </svg>
+                </div>
+              </div>
+              <div className='p-4 descriptionwid'>
+                <h3>Animations </h3>
+                <h5 className='descriptiontxt '>Developing engaging animations for web and mobile applications to capture user attention and enhance interaction.</h5>
+                    <svg width="660" height="40" viewBox="0 -90 35 55" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.5 22.5981L5.5 38.1865C3.5 39.3412 1 37.8979 1 35.5885L1 4.41154C1 2.10214 3.5 0.658765 5.5 1.81347L32.5 17.4019C34.5 18.5566 34.5 21.4434 32.5 22.5981Z" stroke="#AF9DC4" stroke-width="2"/>
+                    </svg>
+              </div>
+              <div className='p-4 descriptionwid'>
+                <h3>Consulting and Strategy</h3>
+                <h5 className='descriptiontxt'>Offering expert advice on user experience strategy, design best practices, and project planning to achieve successful outcomes.</h5>
+                <svg width="650" height="30" viewBox="0 -55 5 25" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_569_43)">
+                  <path d="M10.4881 23.992C7.48468 23.992 4.48119 23.992 1.4857 23.992C1.14712 24.0108 0.813211 23.9083 0.543672 23.703C0.274133 23.4976 0.086799 23.203 0.0157326 22.8721C-0.0355176 22.4688 -0.0355176 22.0607 0.0157326 21.6575C0.181703 20.0134 0.846308 18.4588 1.92064 17.2014C3.18616 15.6801 4.97097 14.6799 6.93143 14.3936C7.51967 14.3016 8.11434 14.2568 8.70975 14.2595C10.1008 14.2595 11.4998 14.2595 12.8908 14.2595C14.8155 14.3066 16.6629 15.0239 18.1135 16.2871C19.5641 17.5502 20.5264 19.2798 20.8338 21.1764C20.9129 21.6773 20.9528 22.1836 20.9527 22.6907C20.941 23.0007 20.8207 23.2968 20.6127 23.5274C20.4047 23.758 20.122 23.9085 19.8142 23.9526C19.6722 23.9644 19.5294 23.9644 19.3874 23.9526L10.4881 23.992ZM19.4904 22.4935C19.4904 22.3358 19.4904 22.1938 19.4904 22.0518C19.4904 21.9099 19.4429 21.6733 19.4113 21.4761C19.2658 20.5461 18.9253 19.6572 18.4118 18.8675C17.8983 18.0779 17.2235 17.4053 16.4316 16.8938C15.2621 16.1176 13.8842 15.7133 12.4798 15.7344C11.2073 15.7344 9.93495 15.7344 8.65456 15.7344C8.1835 15.7359 7.713 15.7728 7.2475 15.8448C5.84697 16.0658 4.55 16.7159 3.5361 17.7051C2.5222 18.6942 1.84181 19.9734 1.58874 21.3657C1.52552 21.7364 1.50148 22.1544 1.45406 22.5093L19.4904 22.4935Z" fill="#AF9DC4"/>
+                  <path d="M4.49726 5.93889C4.50507 4.75441 4.86452 3.59879 5.52998 2.61794C6.19544 1.63708 7.13726 0.874961 8.23644 0.427794C9.33562 -0.0193721 10.5429 -0.131537 11.7059 0.105461C12.8689 0.34246 13.9354 0.918004 14.7708 1.75942C15.6063 2.60083 16.1734 3.67038 16.4002 4.83306C16.627 5.99574 16.5034 7.19942 16.0452 8.29212C15.587 9.38482 14.8147 10.3176 13.8257 10.9726C12.8367 11.6276 11.6753 11.9755 10.4883 11.9724C9.69716 11.9714 8.91397 11.8142 8.18396 11.51C7.45395 11.2057 6.7915 10.7604 6.23467 10.1996C5.67784 9.63881 5.2377 8.97365 4.93952 8.24242C4.64135 7.51119 4.491 6.72832 4.49726 5.93889ZM5.98305 6.00987C5.98943 6.90376 6.26193 7.7756 6.7657 8.51476C7.26946 9.25393 7.98187 9.8271 8.81262 10.1615C9.64337 10.4959 10.5551 10.5765 11.4319 10.3931C12.3086 10.2096 13.1108 9.77041 13.737 9.13115C14.3631 8.49188 14.785 7.6814 14.9488 6.80256C15.1125 5.92372 15.011 5.01614 14.657 4.19499C14.303 3.37384 13.7125 2.67614 12.9605 2.19044C12.2085 1.70475 11.3288 1.45293 10.4331 1.46698C9.23815 1.48978 8.1002 1.98222 7.26701 2.83728C6.43382 3.69233 5.97242 4.84094 5.98305 6.03353V6.00987Z" fill="#AF9DC4"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_569_43">
+                  <rect width="21" height="24" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+
+              </div>
+              <div className='p-4 descriptionwid'>
+                <h3>Front-End Development</h3>
+                <h5 className='descriptiontxt'>Building responsive web and mobile applications using technologies such as Flutter and Dart, and providing custom HTML/CSS solutions. Experience with WordPress for content </h5>
+                  <svg width="650" height="81" viewBox="0 -100 130 181" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.6" d="M84.4812 63.584C83.9692 63.84 83.4892 63.936 83.0412 63.872C82.6572 63.744 82.3372 63.552 82.0812 63.296C81.8252 62.976 81.6652 62.624 81.6012 62.24C81.6012 61.792 81.6972 61.408 81.8892 61.088C82.0812 60.704 82.4012 60.384 82.8492 60.128L126.817 39.392V41.504L82.8492 20.768C82.4012 20.512 82.0812 20.224 81.8892 19.904C81.6972 19.52 81.6012 19.136 81.6012 18.752C81.6652 18.304 81.8252 17.952 82.0812 17.696C82.3372 17.376 82.6572 17.184 83.0412 17.12C83.4892 16.992 83.9692 17.056 84.4812 17.312L127.489 37.76C128.833 38.4 129.505 39.296 129.505 40.448C129.505 41.024 129.345 41.536 129.025 41.984C128.705 42.432 128.193 42.816 127.489 43.136L84.4812 63.584Z" fill="#7A5C9D"/>
+                  <path opacity="0.6" d="M62.5793 78.2477C62.4928 78.7877 62.3118 79.1835 62.0363 79.4352C61.7735 79.7497 61.4226 79.9514 60.9835 80.0404C60.6071 80.1166 60.2431 80.0924 59.8913 79.9678C59.5396 79.8432 59.2628 79.6054 59.0611 79.2545C58.8594 78.9036 58.7704 78.4645 58.7942 77.9373L67.3375 2.15487C67.4239 1.61493 67.6049 1.2191 67.8804 0.967375C68.1432 0.65292 68.4628 0.45756 68.8391 0.381295C69.2782 0.292319 69.6736 0.310142 70.0254 0.434764C70.3771 0.559382 70.6539 0.797156 70.8556 1.14809C71.0573 1.49902 71.1463 1.93809 71.1225 2.46531L62.5793 78.2477Z" fill="#7A5C9D"/>
+                  <path opacity="0.6" d="M45.5562 63.584L2.54823 43.136C1.20423 42.432 0.532227 41.536 0.532227 40.448C0.532227 39.872 0.692226 39.36 1.01223 38.912C1.39623 38.464 1.90823 38.08 2.54823 37.76L45.5562 17.312C46.0682 17.056 46.5162 16.992 46.9002 17.12C47.3482 17.184 47.7002 17.376 47.9562 17.696C48.2122 17.952 48.3402 18.304 48.3402 18.752C48.4042 19.136 48.3402 19.52 48.1482 19.904C48.0202 20.224 47.7002 20.512 47.1882 20.768L3.22023 41.504V39.392L47.1882 60.128C47.7002 60.384 48.0202 60.704 48.1482 61.088C48.3402 61.408 48.4042 61.792 48.3402 62.24C48.3402 62.624 48.2122 62.976 47.9562 63.296C47.7002 63.552 47.3482 63.744 46.9002 63.872C46.5162 63.936 46.0682 63.84 45.5562 63.584Z" fill="#7A5C9D"/>
+                  </svg>
+              </div>
+              <div className='p-4 descriptionwid'>
+                <h3 className=''>Brand Identity</h3>
+                <h5 className='descriptiontxt '>Designing logos, style guides, and visual assets to establish a strong brand presence and enhance your company’s visual identity.</h5>
+                  <svg width="650" height="36" viewBox="0 -82 66 46" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3C0 1.34314 1.34326 0 3 0C4.65674 0 6 1.34314 6 3C6 4.65686 4.65674 6 3 6C1.34326 6 0 4.65686 0 3ZM20 3C20 1.34314 21.3433 0 23 0C24.6567 0 26 1.34314 26 3C26 4.65686 24.6567 6 23 6C21.3433 6 20 4.65686 20 3ZM20 23C20 21.3431 21.3433 20 23 20C24.6567 20 26 21.3431 26 23C26 24.6569 24.6567 26 23 26C21.3433 26 20 24.6569 20 23ZM53 20C51.3433 20 50 21.3431 50 23C50 24.6569 51.3433 26 53 26C54.6567 26 56 24.6569 56 23C56 21.3431 54.6567 20 53 20ZM3 20C1.34326 20 0 21.3431 0 23C0 24.6569 1.34326 26 3 26C4.65674 26 6 24.6569 6 23C6 21.3431 4.65674 20 3 20ZM20 13C20 11.3431 21.3433 10 23 10C24.6567 10 26 11.3431 26 13C26 14.6569 24.6567 16 23 16C21.3433 16 20 14.6569 20 13ZM53 10C51.3433 10 50 11.3431 50 13C50 14.6569 51.3433 16 53 16C54.6567 16 56 14.6569 56 13C56 11.3431 54.6567 10 53 10ZM20 33C20 31.3431 21.3433 30 23 30C24.6567 30 26 31.3431 26 33C26 34.6569 24.6567 36 23 36C21.3433 36 20 34.6569 20 33ZM53 30C51.3433 30 50 31.3431 50 33C50 34.6569 51.3433 36 53 36C54.6567 36 56 34.6569 56 33C56 31.3431 54.6567 30 53 30ZM0 13C0 11.3431 1.34326 10 3 10C4.65674 10 6 11.3431 6 13C6 14.6569 4.65674 16 3 16C1.34326 16 0 14.6569 0 13ZM3 30C1.34326 30 0 31.3431 0 33C0 34.6569 1.34326 36 3 36C4.65674 36 6 34.6569 6 33C6 31.3431 4.65674 30 3 30ZM30 13C30 11.3431 31.3433 10 33 10C34.6567 10 36 11.3431 36 13C36 14.6569 34.6567 16 33 16C31.3433 16 30 14.6569 30 13ZM63 10C61.3433 10 60 11.3431 60 13C60 14.6569 61.3433 16 63 16C64.6567 16 66 14.6569 66 13C66 11.3431 64.6567 10 63 10ZM30 33C30 31.3431 31.3433 30 33 30C34.6567 30 36 31.3431 36 33C36 34.6569 34.6567 36 33 36C31.3433 36 30 34.6569 30 33ZM63 30C61.3433 30 60 31.3431 60 33C60 34.6569 61.3433 36 63 36C64.6567 36 66 34.6569 66 33C66 31.3431 64.6567 30 63 30ZM10 13C10 11.3431 11.3433 10 13 10C14.6567 10 16 11.3431 16 13C16 14.6569 14.6567 16 13 16C11.3433 16 10 14.6569 10 13ZM43 10C41.3433 10 40 11.3431 40 13C40 14.6569 41.3433 16 43 16C44.6567 16 46 14.6569 46 13C46 11.3431 44.6567 10 43 10ZM10 33C10 31.3431 11.3433 30 13 30C14.6567 30 16 31.3431 16 33C16 34.6569 14.6567 36 13 36C11.3433 36 10 34.6569 10 33ZM43 30C41.3433 30 40 31.3431 40 33C40 34.6569 41.3433 36 43 36C44.6567 36 46 34.6569 46 33C46 31.3431 44.6567 30 43 30ZM30 3C30 1.34314 31.3433 0 33 0C34.6567 0 36 1.34314 36 3C36 4.65686 34.6567 6 33 6C31.3433 6 30 4.65686 30 3ZM33 20C31.3433 20 30 21.3431 30 23C30 24.6569 31.3433 26 33 26C34.6567 26 36 24.6569 36 23C36 21.3431 34.6567 20 33 20ZM60 23C60 21.3431 61.3433 20 63 20C64.6567 20 66 21.3431 66 23C66 24.6569 64.6567 26 63 26C61.3433 26 60 24.6569 60 23ZM13 0C11.3433 0 10 1.34314 10 3C10 4.65686 11.3433 6 13 6C14.6567 6 16 4.65686 16 3C16 1.34314 14.6567 0 13 0ZM10 23C10 21.3431 11.3433 20 13 20C14.6567 20 16 21.3431 16 23C16 24.6569 14.6567 26 13 26C11.3433 26 10 24.6569 10 23ZM43 20C41.3433 20 40 21.3431 40 23C40 24.6569 41.3433 26 43 26C44.6567 26 46 24.6569 46 23C46 21.3431 44.6567 20 43 20Z" fill="#AF9DC4"/>
+                  </svg>
+              </div>
+                </motion.Row>
+
+            </div>
+          </div>
+
+
+      {/* <div className='full-section  container '>
       <div className='position-absolute'>
-      <h1 className='inline'>Services  </h1>  
-      <h5 className='inline'>How I help</h5>  
-       
-      <Row>
-      <Col className='p-2'>
-        <h3>UI/UX Web and Mobile</h3>
-        <p>Creating custom website that's fits your customers needs using research and designs processes</p>
-       </Col>
-       <Col className='p-2'>
-        <h3>UI/UX Web and Mobile</h3>
-        <p>Creating custom website that's fits your customers needs using research and designs processes</p>
-       </Col>
-       <Col className='p-2'>
-        <h3>UI/UX Web and Mobile</h3>
-        <p>Creating custom website that's fits your customers needs using research and designs processes</p>
-       </Col>
-       <Col className='p-2'>
-        <h3>UI/UX Web and Mobile</h3>
-        <p>Creating custom website that's fits your customers needs using research and designs processes</p>
-       </Col>
-       <Col className='p-2'>
-        <h3>UI/UX Web and Mobile</h3>
-        <p>Creating custom website that's fits your customers needs using research and designs processes</p>
-       </Col>
-      </Row>
+      <h1 className='inline Servicestxt '>Services  </h1>  
+      <h5 className='inline Question3 '>How I help</h5>  
+        <div className=''>
+        <div className=''>
+        <motion.Row style={{ x }}  className='d-flex text-nowrap Question1'>
+        <Col className='p-2'>
+          <h3>UI/UX Web and Mobile</h3>
+          <p className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</p>
+        </Col>
+        <Col className='p-2'>
+          <h3>UI/UX Web and Mobile</h3>
+          <p className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</p>
+        </Col>
+        <Col className='p-2'>
+          <h3>UI/UX Web and Mobile</h3>
+          <p className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</p>
+        </Col>
+        <Col className='p-2'>
+          <h3>UI/UX Web and Mobile</h3>
+          <p className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</p>
+        </Col>
+        <Col className='p-2'>
+          <h3 className=''>UI/UX Web and Mobile</h3>
+          <p className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</p>
+        </Col>
+            </motion.Row>
+        </div>
+        </div>
+      
      </div>   
-      </div>
+      </div> */}
     </div>
+    </div>
+    
     
   );
 };

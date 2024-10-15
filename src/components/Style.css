@@ -63,7 +63,7 @@ display: inline;
 
 
 .section1 {
-  height: 400vh; 
+  height: 350vh; 
 }
 
 
@@ -136,4 +136,31 @@ display: inline;
   font-size: 2rem;
   font-family: Nunito;
   font-weight: 200;
+}
+
+.servicesbg {
+  background-color: #E4E4DF;
+}
+
+.Servicestxt {
+  font-size: 6rem;
+  font-family: Nunito;
+  font-weight: 200;
+}
+
+.descriptiontxt{
+  font-size: 1rem;
+  font-family: Nunito;
+  font-weight: 400;
+  width: 360px;
+}
+
+.descriptionwid{
+  background-color:#ffffff;
+height:250px;
+width: 400px;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+margin: 20px;
 }

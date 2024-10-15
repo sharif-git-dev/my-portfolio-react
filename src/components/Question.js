@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import './Style.css';
 import { Container, Row, } from 'react-bootstrap';
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, clamp } from "framer-motion";
 import { useInView } from 'react-intersection-observer';  
 
 
@@ -15,7 +15,8 @@ const Question = () => {
     target: TargetRef,
   })
 
-  const x = useTransform(scrollYProgress, [0, 1], ["20%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 0.8], ["20%", "-215%"], );
+
 
   const [ref, inView] = useInView({
     triggerOnce: true, // Trigger the animation once
@@ -24,10 +25,11 @@ const Question = () => {
 
 
   return (
-    <section className='bg-white rounded-top-5 '>
-    <div  className='position-relative section1'> 
-      <div className='position-sticky top-0 d-flex p-5 align-items-center overflow-hidden'>
-          <motion.div style={{ x }}  className='d-flex text-nowrap Question1'>
+    <section className='bg-white rounded-top-5 me-5 ms-5 ' >
+      
+    <div  className='position-relative section1 ' > 
+      <div className='position-sticky top-0 overflow-hidden'>
+          <motion.div style={{ x }}  className='d-flex text-nowrap Question1 '>
          
           Is your website failing to reflect your brand?
  
