@@ -1,6 +1,7 @@
 // src/components/FirstSection.js
-import React from 'react';
+
 import { useRef } from "react";
+import React, { useState } from 'react';
 
 import './Style.css';
 import { Container, Row, } from 'react-bootstrap';
@@ -10,12 +11,15 @@ import { useInView } from 'react-intersection-observer';
 
 
 const Question = () => {
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
   const TargetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll ({
     target: TargetRef,
   })
 
-  const x = useTransform(scrollYProgress, [0, 0.8], ["20%", "-215%"], );
+  const x = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );
+  const z = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );
 
 
   const [ref, inView] = useInView({
@@ -25,18 +29,30 @@ const Question = () => {
 
 
   return (
-    <section className='bg-white rounded-top-5 me-5 ms-5 ' >
-      
-    <div  className='position-relative section1 ' > 
-      <div className='position-sticky top-0 overflow-hidden'>
-          <motion.div style={{ x }}  className='d-flex text-nowrap Question1 '>
+    <section className='bg-white rounded-top-5 me-2 ms-2 ' >
+      <div className="text-end">
+            {isMobileView ? (
+           
+                  <motion.div  className='  qh2s   section'>
+                 
+                  Is your website failing to reflect your brand?
          
-          Is your website failing to reflect your brand?
- 
-          </motion.div>
-      </div>
-    </div>
-
+                  </motion.div>
+            
+        
+            ) : (
+              <div  className='position-relative section1 ' > 
+              <div className='position-sticky top-0 overflow-hidden'>
+                  <motion.div style={{ x }}  className='d-flex text-nowrap Question1 '>
+                 
+                  Is your website failing to reflect your brand?
+         
+                  </motion.div>
+              </div>
+            </div>
+        
+            )}
+          </div>
 
     <div className='full-section container'> 
     <motion.div 

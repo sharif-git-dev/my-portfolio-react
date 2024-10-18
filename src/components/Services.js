@@ -16,7 +16,7 @@ const Services = () => {
   const x = useTransform(scrollYProgress, [0,0.7], ["200%%", "-60%"]);
  
   return (
-    <div className='servicesbg me-5 ms-5 rounded-bottom-5'>
+    <div className='servicesbg me-2 ms-2 rounded-bottom-5'>
       <div className='container'>
           <div  className='position-relative section1 pt-5 over'> 
             <div className='position-sticky top-0 '>

@@ -13,7 +13,10 @@ const Services = ({ isVisible }) => {
   })
   const x = useTransform(scrollYProgress, [0, 1], ["20%", "-95%"]);
 
-  
+
+  const { scrollY } = useScroll();
+  const Num = useTransform(scrollY, [0, 1000], [1, 5]);  
+
   return (
     <section className='full-section'>
       <Container>
@@ -21,21 +24,27 @@ const Services = ({ isVisible }) => {
          </motion.div> */}
 
 <div className='row'>
-   <div className='col'>
-        <h1>Featured Works</h1>
-        <h1>01.</h1>
-        <h3>Sorcero</h3>
-        <ButtonGroup>
-        <button className='m-1 p-2'>
-        Design 
-            </button>
-            <button className='m-1 p-2'>
-            User Research 
-          </button>
-          <button className='m-1 p-2'>
-          Animations
-          </button>
-        </ButtonGroup>
+   <div className='col '>
+   <motion.div className='worknum sticky'
+      style={{
+        position: 'sticky',
+        top: 0,
+        textAlign: 'center',
+        fontSize: '2rem',
+        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+      }}
+    >
+      {Num}
+    </motion.div>
+        <h1 className='Question2 text-white '>Featured Works</h1>
+        
+        <h1 className='worknum'>01.</h1>
+      
+        <h3 className='Question3 text-white'>Sorcero</h3>
+        
+        <button className='m-1 p-2 pe-3 ps-3 rounded-5'>Design </button>
+        <button className='m-1 p-2 pe-3 ps-3 rounded-5'> User Research </button>
+        <button className='m-1 p-2 pe-3 ps-3 rounded-5'>Animations</button>
    </div>
 
    <div className='col'>

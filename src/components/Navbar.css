@@ -34,7 +34,6 @@
 }
 
 .navbar-drawer-icon {
-  cursor: pointer;
   padding-top: 7%;
 }
 
@@ -114,7 +113,6 @@
   padding: 10px 15px; /* Add padding for a button-like feel */
   border-radius: 5px; /* Round corners */
   transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
-  cursor: pointer; /* Add this line */
 }
 
 .navbar-links li a:hover, .drawer-links li a:hover {

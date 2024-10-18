@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
 import './Navbar.css';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
-
+import './customcursor/Stylesfor.css';
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* Drawer menu for mobile */}
         <div className={`navbar-drawer ${isDrawerOpen ? 'navbar-drawer-open' : ''}`}>
-          <ul className="drawer-links">
+          <ul className="drawer-links ">
             <li><Link to="home" smooth duration={500} onClick={toggleDrawer}>Home</Link></li>
             <li><Link to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Link></li>
             <li><Link to="about" smooth duration={500} onClick={toggleDrawer}>About</Link></li>
