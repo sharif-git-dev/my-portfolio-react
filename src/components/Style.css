@@ -130,7 +130,7 @@ display: inline;
 
 
 .worknum{
-  font-size: 20rem;
+  font-size: 16rem;
   font-family: Nunito;
   color: white;
   font-weight: 100;
@@ -170,22 +170,6 @@ margin: 20px;
 }
 
 
-
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
-@media only screen and (max-width: 700px){
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px){
-  .responsive {
-    width: 100%;
-  }
+textarea {
+  height: 150px;
 }

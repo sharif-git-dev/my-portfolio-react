@@ -25,7 +25,7 @@ const Services = ({ isVisible }) => {
 
 <div className='row'>
    <div className='col '>
-   <motion.div className='worknum sticky'
+   {/* <motion.div className='worknum sticky'
       style={{
         position: 'sticky',
         top: 0,
@@ -35,7 +35,7 @@ const Services = ({ isVisible }) => {
       }}
     >
       {Num}
-    </motion.div>
+    </motion.div> */}
         <h1 className='Question2 text-white '>Featured Works</h1>
         
         <h1 className='worknum'>01.</h1>
