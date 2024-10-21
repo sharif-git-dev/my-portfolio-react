@@ -31,10 +31,11 @@
 }
 
 
+@media (min-width: 767px) {
 .secondary-cursor {
   width: 30px;
   height: 30px;
-
+}
 }
 
 

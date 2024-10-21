@@ -42,7 +42,7 @@ display: inline;
 }
   
 .sorcero {
-  background-image: url(../assets/sorcero.jpg);
+  background-image: url(../assets/Project_img/sorcero.jpg);
 }
 
 /* TextScroll.css */
@@ -66,6 +66,15 @@ display: inline;
   height: 350vh; 
 }
 
+
+.sectionCarousel {
+  width: 1500px;
+}
+
+.wid {
+  width: 500px;
+
+}
 
 .qh2 {
   font-size: 7rem;
@@ -97,7 +106,6 @@ display: inline;
   padding-bottom: 1rem;
   color: white;
   font-weight: 100;
-  line-height: 10px;
   font-family: Nunito;
 }
 
@@ -155,21 +163,74 @@ display: inline;
 .descriptiontxt{
   font-size: 1rem;
   font-family: Nunito;
-  font-weight: 400;
-  width: 360px;
 }
 
 .descriptionwid{
   background-color:#ffffff;
 height:250px;
-width: 400px;
+min-width: 400px;
 border-radius:12px;
 display:flex;
 flex-direction:column;
 margin: 20px;
 }
 
+.descriptionwidmob{
+  margin-top: 30px;
+  background-color:#ffffff;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+}
 
 textarea {
   height: 150px;
+}
+
+
+
+
+.image-container {
+  position: relative;
+  overflow: hidden; /* Hide overflow */
+}
+
+.img-fluid {
+  width: 100%; /* Image will take the full width of the container */
+  height: 100%; /* Image will take the full height of the container */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with 90% opacity */
+  color: white; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Transition for smooth effect */
+}
+
+.image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+
+.carousel-control-prev {
+  width: 3% !important; 
+  opacity: 0.1 !important;
+
+}
+
+.carousel-control-next {
+  width: 3% !important; 
+  opacity: 0.1 !important;
+}
+.carousel-indicators{
+  opacity: 0.1;
 }

@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.1cc9dc3a.css",
-    "main.js": "/static/js/main.78d88c70.js",
-    "static/media/sorcero.jpg": "/static/media/sorcero.3436a19a7da0c13b8bf5.jpg",
+    "main.css": "/static/css/main.fb0c9200.css",
+    "main.js": "/static/js/main.46fc47c9.js",
+    "static/media/image.png": "/static/media/image.78fa00434060598375b9.png",
+    "static/media/husam.png": "/static/media/husam.b86f400ead6536b8eec3.png",
+    "static/media/sorcero.jpg": "/static/media/sorcero.8223eb1ac4ec4538f475.jpg",
+    "static/media/Solbooks.jpg": "/static/media/Solbooks.502b134c6f8e9bcab74c.jpg",
+    "static/media/Adeptia.jpg": "/static/media/Adeptia.419898249c85ee834184.jpg",
+    "static/media/Ekhtibary.jpg": "/static/media/Ekhtibary.5f9532af1f2b92b5851b.jpg",
+    "static/media/YHH.png": "/static/media/YHH.f780c218e2094091edca.png",
     "index.html": "/index.html",
-    "main.1cc9dc3a.css.map": "/static/css/main.1cc9dc3a.css.map",
-    "main.78d88c70.js.map": "/static/js/main.78d88c70.js.map"
+    "main.fb0c9200.css.map": "/static/css/main.fb0c9200.css.map",
+    "main.46fc47c9.js.map": "/static/js/main.46fc47c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cc9dc3a.css",
-    "static/js/main.78d88c70.js"
+    "static/css/main.fb0c9200.css",
+    "static/js/main.46fc47c9.js"
   ]
 }

@@ -40,7 +40,7 @@ const App = () => {
           <Contactme />
         </Element>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

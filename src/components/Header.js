@@ -21,9 +21,7 @@ const Header = () => {
             )}
           </div>
        <div className='qh3'>Hi, I’m Sharif Jamo</div>
-
-       <p className='qh4'>My job is Crafting Intuitive User Experiences: Blending Creativity  <p/>
-        and Strategy to Turn Ideas into Seamless Digital Journeys</p>
+       <p className='qh4'>My job is Crafting Intuitive User Experiences: Blending Creativity and Strategy to Turn Ideas into Seamless Digital Journeys</p>
        <div>
         <button type="button" class="btn btn-dark m-2">Get In Touch</button>
         <button type="button" class="btn drawer-links text-white m-2">See My Works</button>
