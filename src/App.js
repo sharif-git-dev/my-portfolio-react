@@ -16,7 +16,7 @@ import Scrolltest from './components/Scrolltest';
 const App = () => {
 
   return (
-    <div className="App bg-black ">
+    <div className="App bgblack ">
     <CustomCursor />
       {/* <Scrolltest/> */}
       <Navbar />

@@ -1,10 +1,12 @@
-// src/components/Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
 import './Navbar.css';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
 import './customcursor/Stylesfor.css';
+import {motion } from 'framer-motion'
+
+
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -52,7 +54,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className='bg-black'>
+    <motion.div className='bg-black' 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1,}}
+    transition={{delay:3.5, duration:2}}
+    >
     <div className= {`bg-transparent navbar ${showNavbar ? 'navbar-show' : 'navbar-hide' }`}>
       <Container>
 
@@ -79,16 +85,16 @@ const Navbar = () => {
 
         {/* Drawer menu for mobile */}
         <div className={`navbar-drawer ${isDrawerOpen ? 'navbar-drawer-open' : ''}`}>
-          <ul className="drawer-links ">
-            <li><Link to="home" smooth duration={500} onClick={toggleDrawer}>Home</Link></li>
-            <li><Link to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Link></li>
-            <li><Link to="about" smooth duration={500} onClick={toggleDrawer}>About</Link></li>
-            <li><Link to="contact" smooth duration={500} onClick={toggleDrawer}>Contact</Link></li>
+          <ul className="nav-item">
+            <li class="nav-link pb-4"><Link to="home" smooth duration={500} onClick={toggleDrawer}>Home</Link></li>
+            <li class="nav-link pb-4"><Link to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Link></li>
+            <li class="nav-link pb-4"><Link to="about" smooth duration={500} onClick={toggleDrawer}>About</Link></li>
+            <li class="nav-link pb-4"><Link to="contact" smooth duration={500} onClick={toggleDrawer}>Contact</Link></li>
           </ul>
         </div>
       </Container>
     </div>
-    </div>
+    </motion.div>
     
   );
 };

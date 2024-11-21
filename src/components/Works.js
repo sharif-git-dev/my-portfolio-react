@@ -3,8 +3,8 @@ import React from 'react';
 import './Style.css';
 import { Container, Row, Col, Carousel} from 'react-bootstrap';
 
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion, useTransform,useScroll  } from "framer-motion";
+import { useRef ,useState, } from "react";
 
 import sorcero from '../assets/Project_img/sorcero.jpg';
 import Adeptia from '../assets/Project_img/Adeptia.jpg';
@@ -12,7 +12,9 @@ import SOLBooks from '../assets/Project_img/Solbooks.jpg';
 import YHH from '../assets/Project_img/YHH.png';
 import Ekhtibary from '../assets/Project_img/Ekhtibary.jpg';
 
-const Services = ({ isVisible }) => {
+const Services = () => {
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
   const TargetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll ({
     target: TargetRef,
@@ -62,10 +64,32 @@ const Services = ({ isVisible }) => {
     <Row className='full-section text-center align-content-center'>
       <h1 className='Question2 text-white text-start'>Featured Works</h1>
       <Col>
-      <Carousel className=' pe-5 pb-5 i' >
+      <Carousel className=' pe-lg-5- pb-lg-5 ' >
                 {projects.map((project, index) => (
                     <Carousel.Item key={index}>
-                        <div className='row'>
+                        <div>
+                            {
+                        isMobileView ? (
+                            <div>
+                            <div>
+                              <div className='text-start'>
+                              <h1 className='Question2 text-white'>{String(index + 1).padStart(2, '0')}.</h1>
+                                <h3 className='Question3 text-white'>{project.title}</h3>
+                              </div>
+                            </div>
+                           <div className="image-container">
+                                    <img
+                                        src= {project.image}
+                                        alt={project.title}
+                                        className="img-fluid"
+                                    />
+                                    <div className="overlay">
+                                        <p>{project.description}</p>
+                                    </div>
+                            </div>
+                        </div>
+                        ): (
+                            <div className='row'>
                             <div className='col '>
                               <div className='text-start'>
                               <h1 className='worknum'>{String(index + 1).padStart(2, '0')}.</h1>
@@ -91,6 +115,11 @@ const Services = ({ isVisible }) => {
                                 </div>
                             </div>
                         </div>
+                        )
+                            }
+
+                        </div>
+                      
                     </Carousel.Item>
                 ))}
             </Carousel>
@@ -110,9 +139,9 @@ export default Services;
 // import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 // const FeaturedWorksCarousel = () => {
-//     const projects = [
+//     const projects = [n
 //         {
-//             title: "Sorcero",
+//             title: "Sorcero",ى
 //             description: "This is the description text that appears on hover.",
 //             image: "https://www.sorcero.com/hubfs/Sorcero-Paltform-screen-2-1.jpg",
 //         },

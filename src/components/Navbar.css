@@ -82,9 +82,10 @@
 }
 
 .navbar-drawer-open {
-  opacity: 0.9;
+  opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  
 }
 
 
@@ -129,11 +130,13 @@
   display: block; /* Show the drawer when open */
   background-color: #333; /* Background color for drawer */
   position: absolute; /* Position it absolutely */
-  top: 60px; /* Adjust based on navbar height */
-  right: 0; /* Align to the right */
-  width: 200px; /* Set width */
-  border-radius: 5px; /* Round corners */
+  top: 50px; /* Adjust based on navbar height */
+  width:150px; /* Set width */
+  border-radius: 20px; /* Round corners */
   z-index: 1000; /* Ensure it's on top */
+  padding-left: 0px;
+  margin: 10px;
+  height: 230px;
 }
 
 .drawer-links li {
