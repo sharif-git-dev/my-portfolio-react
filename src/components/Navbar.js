@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
 import './Navbar.css';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
 import './customcursor/Stylesfor.css';
 import {motion } from 'framer-motion'
+
+import { Link as Linkto } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -57,14 +59,17 @@ const Navbar = () => {
     <motion.div className='bg-black' 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1,}}
-    transition={{delay:3.5, duration:2}}
+    transition={{delay:0, duration:2}}
     >
     <div className= {`bg-transparent navbar ${showNavbar ? 'navbar-show' : 'navbar-hide' }`}>
-      <Container>
 
+      <Container>
+      
         <Row className='w-100'>
           <Col>
-            <div className='logo'>Sharif</div>
+          <Linkto to={'/'} className='logo'>
+            <div>Sharif</div>
+          </Linkto>
           </Col>
 
           <Col className="text-end">

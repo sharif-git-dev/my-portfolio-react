@@ -15,7 +15,7 @@ const Contactme = () => {
 
   return (
     <Container> 
-      <Row className='full-section text-end'>
+      <Row className='full-section text-end p-lg-5 m-lg-5 '>
         <Col>
           <h1 className='text-center Question2 text-white'>Let’s Talk</h1>
           <div className="mb-5 mt-5 text-start">
