@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 
 import { SplitText } from './SplitText'
-import { AnimatePresence, easeIn, easeInOut, easeOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import warm from '../assets/warm.webm';
+
+import Contactme from "./Contactmepopup";
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 
 
 const Header = () => {
 
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
+
+  const [showModal, setShowModal] = useState(false);
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
 
   return (
     <section className=' full-section'>
@@ -48,14 +55,14 @@ const Header = () => {
        <motion.div 
              initial={{ opacity: 0 }}
               animate={{ opacity: 1,}}
-              transition={{delay:3.5, duration:2}}
+              transition={{delay:2.8, duration:2}}
 
                 className='qh3'>Hi, I’m Sharif Jamo
                 </motion.div>
                 <motion.p 
              initial={{ opacity: 0 }}
               animate={{ opacity: 1,}}
-              transition={{delay:4.0, duration:2}}
+              transition={{delay:3.0, duration:2}}
 
                 className='qh4'>My job is Crafting Intuitive User Experiences: Blending Creativity and Strategy to Turn Ideas into Seamless Digital Journeys
                 </motion.p>
@@ -63,14 +70,13 @@ const Header = () => {
                 <motion.div 
              initial={{ opacity: 0 }}
               animate={{ opacity: 1,}}
-              transition={{delay:4.0, duration:2}}
-                  >
-                    <a href='#contact'>
-        <button type="button" class="btn btn-dark m-2">Get In Touch</button>
-                    </a>
-                    <a href='#portfolio'>
-        <button type="button" class="btn drawer-links text-white m-2">See My Works</button>
-                    </a>
+              transition={{delay:3.0, duration:2}}>
+
+                      <button   class="btn btn-dark m-2" onClick={handleShow}>Get In Touch</button>
+                      <Contactme show={showModal} handleClose={handleClose} />
+                    <Link to="portfolio">
+                        <button type="button" class="btn drawer-links text-white m-2">See My Works</button>
+                    </Link>
         </motion.div>
       </div>
     

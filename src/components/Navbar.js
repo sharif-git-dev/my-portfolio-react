@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
 import './Navbar.css';
 import { Link } from 'react-scroll'; // Import Link from react-scroll
@@ -7,6 +7,7 @@ import './customcursor/Stylesfor.css';
 import {motion } from 'framer-motion'
 
 import { Link as Linkto } from 'react-router-dom';
+import Contactme from "./Contactmepopup";
 
 
 const Navbar = () => {
@@ -55,6 +56,11 @@ const Navbar = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+
+  const [showModal, setShowModal] = useState(false);
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <motion.div className='bg-black' 
     initial={{ opacity: 0 }}
@@ -79,11 +85,13 @@ const Navbar = () => {
               </div>
             ) : (
               <ul className="navbar-links link_underline">
-                <li><Link to="home" smooth duration={500}>Home</Link></li>
-                <li><Link to="portfolio" smooth duration={500}>Portfolio</Link></li>
-                <li><Link to="about" smooth duration={500}>About</Link></li>
-                <li><Link to="contact" smooth duration={500}>Contact</Link></li>
+                <li><Linkto to="/Services" smooth duration={500}>Services </Linkto></li>
+                <li><Linkto to="/Portfolio" smooth duration={500}>Portfolio</Linkto></li>
+                <li><Linkto to="/About" smooth duration={500}>About</Linkto></li>
+                <li  onClick={handleShow}><Linkto>  Contact  </Linkto></li>
+                      <Contactme show={showModal} handleClose={handleClose} />
               </ul>
+              
             )}
           </Col>
         </Row>
@@ -91,10 +99,10 @@ const Navbar = () => {
         {/* Drawer menu for mobile */}
         <div className={`navbar-drawer ${isDrawerOpen ? 'navbar-drawer-open' : ''}`}>
           <ul className="nav-item">
-            <li class="nav-link pb-4"><Link to="home" smooth duration={500} onClick={toggleDrawer}>Home</Link></li>
-            <li class="nav-link pb-4"><Link to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Link></li>
-            <li class="nav-link pb-4"><Link to="about" smooth duration={500} onClick={toggleDrawer}>About</Link></li>
-            <li class="nav-link pb-4"><Link to="contact" smooth duration={500} onClick={toggleDrawer}>Contact</Link></li>
+            <li class="nav-link pb-4"><Linkto to="Services" smooth duration={500} onClick={toggleDrawer}>Services</Linkto></li>
+            <li class="nav-link pb-4"><Linkto to="portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Linkto></li>
+            <li class="nav-link pb-4"><Linkto to="about" smooth duration={500} onClick={toggleDrawer}>About</Linkto></li>
+            <li class="nav-link pb-4"><Linkto to="contact" smooth duration={500} onClick={toggleDrawer}>Contact</Linkto></li>
           </ul>
         </div>
       </Container>

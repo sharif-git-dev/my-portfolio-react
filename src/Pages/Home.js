@@ -1,20 +1,17 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import router components
 import Services from '../components/Services';
 import AboutSection from '../components/AboutSection';
 import Contactme from '../components/Contactme';
 import Works from '../components/Works';
-import Footer from '../components/Footer';
 import Question from '../components/Question';
-import Navbar from '../components/Navbar';
 import Header from '../components/Header';
-import CustomCursor from '../components/customcursor/customcursors';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';
 import { Element } from 'react-scroll';
-import Scrolltest from '../components/Scrolltest';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Homepage () {
   return (
