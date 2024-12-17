@@ -15,4 +15,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; // Ensure this is a default export
+export default Footer; 

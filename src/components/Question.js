@@ -13,10 +13,12 @@ import { useInView } from 'react-intersection-observer';
 const Question = () => {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
+  
   const TargetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll ({
     target: TargetRef,
   })
+  const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 
   const x = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );
   const z = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );
