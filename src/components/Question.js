@@ -18,7 +18,7 @@ const Question = () => {
   const { scrollYProgress } = useScroll ({
     target: TargetRef,
   })
-  const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+  // const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 
   const x = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );
   const z = useTransform(scrollYProgress, [0, 0.8], ["35%", "-235%"], );

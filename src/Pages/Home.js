@@ -23,11 +23,11 @@ export function Homepage () {
               <Element name="question" id="question">
                 <Question />
               </Element>
-              <Element name="services" id="services">
-                <Services />
-              </Element>
               <Element name="portfolio" id="portfolio">
                 <Works />
+                </Element>
+              <Element name="services" id="services">
+                <Services />
               </Element>
               <Element name="about" id="about">
                 <AboutSection />

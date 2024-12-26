@@ -9,6 +9,8 @@ import '../components/Style.css';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import { useState } from 'react';
+import { motion } from 'framer-motion'
+import { SplitText } from '../components/SplitText'
 
 
 export function Portfolio () {
@@ -50,8 +52,30 @@ export function Portfolio () {
     
     return (
      <Container>
-      <Row className='full-section text-center align-content-center'>
-        <h1 className='Question2 text-white text-start'>Featured Works</h1>
+      <Row className=' text-center align-content-center'>
+      <div className='full-page text-center align-content-center'>
+                <motion.div className='inline Servicestxt '
+                initial={{ opacity: 1 ,}}
+                  animate={{ opacity: 1,}}
+                  exit={{ opacity: 1 }}
+                  >
+                  <SplitText
+                  initial={{ y: '90%' }}
+                  animate="visible"
+                  variants={{
+                    visible: i => ({
+                      y: 0,
+                      transition: {
+                        easeOut: 1,
+                        delay: i * 0.05,
+                        duration: 1.0,
+                      }
+                    })
+                  }}>
+                P o r t f o l i o        
+                </SplitText>
+                </motion.div>
+                </div>
         <Col>
           <Carousel className=' pe-lg-5- pb-lg-5'>
             {projects.map((project, index) => (

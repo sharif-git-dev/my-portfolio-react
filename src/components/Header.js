@@ -19,7 +19,8 @@ const Header = () => {
 
   return (
     <section className=' full-section'>
-      <video loop autoPlay muted  src={warm} type="video/webm" className='bgvideo '/>
+       {isMobileView ? (
+        <div></div>): (<video loop autoPlay muted  src={warm} type="video/webm" className='bgvideo'/>) }
       
       <div className="container text-center">
       
@@ -47,7 +48,7 @@ const Header = () => {
                   }
                 })
               }}>
-            Designing  Experiences, One Pixel at a Time        
+            Designing Experiences, One Pixel at a Time        
             </SplitText>
                 </motion.div>
             )}

@@ -1,18 +1,41 @@
 // YH&H Project 
 
 import React from 'react';
+import { motion } from 'framer-motion'
+import { SplitText } from '../components/SplitText'
 
 export function Services () {
     return (
-        <div className='servicesbg me-lg-2 ms-lg-2 rounded-bottom-5'>
+        <div className='servicesbg me-lg-2 ms-lg-2 rounded-bottom-5 bg-black'>
         <div className='container'>
             <div > 
-              <div className=' pt-5'>
-              <h1 className='inline Servicestxt'>Services  </h1>  
+              <div>
+                <div className='full-page text-center align-content-center'>
+                <motion.div className='inline Servicestxt '
+                initial={{ opacity: 1 ,}}
+                  animate={{ opacity: 1,}}
+                  exit={{ opacity: 1 }}
+                  >
+                  <SplitText
+                  initial={{ y: '90%' }}
+                  animate="visible"
+                  variants={{
+                    visible: i => ({
+                      y: 0,
+                      transition: {
+                        easeOut: 1,
+                        delay: i * 0.05,
+                        duration: 1.0,
+                      }
+                    })
+                  }}>
+                S e r v i c e s        
+                </SplitText>
+                </motion.div>
+                </div>
               <h5 className='inline Question3 '>How I help</h5>   
-              <div className="">
-             
-                    <div className='pb-5'>
+              <div>
+                  <div className='pb-5'>
                   <div className='p-4 descriptionwidmob'>
                   <h3>UI/UX Web and Mobile</h3>
                   <h5 className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</h5>
@@ -34,14 +57,9 @@ export function Services () {
                   <h5 className='descriptiontxt '>Designing logos, style guides, and visual assets to establish a strong brand presence and enhance your company’s visual identity.</h5>
                 </div>
                     </div>
-             
-            
-            
-            </div>
-  
-                  
-              </div>
-            </div>
+                </div> 
+                  </div>
+                </div>
       </div>
       </div>
     );

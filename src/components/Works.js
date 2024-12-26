@@ -47,11 +47,11 @@ const Services = () => {
   ];
 
   return (
-    <Container>
-      <Row className='full-section text-center align-content-center'>
-        <h1 className='Question2 text-white text-start'>Featured Works</h1>
+    <div>
+      <Row className='full-section align-content-center'>
+        <h1 className='Question2 text-white text-center'>Featured Works</h1>
         <Col>
-          <Carousel className=' pe-lg-5- pb-lg-5'>
+          <Carousel className='m-5 p-5 pe-lg-5- pb-lg-5'>
             {projects.map((project, index) => (
               <Carousel.Item key={index}>
                 <div>
@@ -75,8 +75,9 @@ const Services = () => {
                     </div>
                   ) : (
                     <div className='row'>
-                      <div className='col'>
-                        <div className='text-start'>
+                      <div className='col'></div>
+                      <div className='col text-start '>
+                        <div className=''>
                           <h1 className='worknum'>{String(index + 1).padStart(2, '0')}.</h1>
                           <h3 className='Question3 text-white'>{project.title}</h3>
                           <Link to={project.link}>
@@ -98,6 +99,8 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
+                      <div className='col'></div>
+
                     </div>
                   )}
                 </div>
@@ -106,7 +109,7 @@ const Services = () => {
           </Carousel>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 
