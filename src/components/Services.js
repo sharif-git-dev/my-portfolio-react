@@ -19,11 +19,11 @@ const Services = () => {
  
 
   return (
-    <div className='servicesbg me-lg-2 ms-lg-2 rounded-bottom-5'>
+    <div className='servicesbg me-lg-2 ms-lg-2 rounded-bottom-5 mb-5'>
       <div className='container'>
           <div > 
             <div className=' pt-5'>
-            <h1 className='inline Servicestxt'>Services  </h1>  
+            <h1 className='inline Servicestxt text-black '>Services  </h1>  
             <h5 className='inline Question3 '>How I help</h5>   
             <div className="">
             {isMobileView ? (
