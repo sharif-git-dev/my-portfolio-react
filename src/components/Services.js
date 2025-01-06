@@ -23,11 +23,11 @@ const Services = () => {
       <div className='container'>
           <div > 
             <div className=' pt-5'>
-            <h1 className='inline Servicestxt'>Services  </h1>  
+            <h1 className='inline Servicestxt text-black'>Services  </h1>  
             <h5 className='inline Question3 '>How I help</h5>   
             <div className="">
             {isMobileView ? (
-                  <div className='pb-5'>
+                  <div className='pb-5 mb-5'>
                 <div className='p-4 descriptionwidmob'>
                 <h3>UI/UX Web and Mobile</h3>
                 <h5 className='descriptiontxt'>Creating custom website that's fits your customers needs using research and designs processes</h5>

@@ -96,7 +96,8 @@ const Navbar = () => {
                 <li><Linkto to="/Services" smooth duration={500} onClick={toggleDrawer}>Services</Linkto></li>
                 <li><Linkto to="/Portfolio" smooth duration={500} onClick={toggleDrawer}>Portfolio</Linkto></li>
                 <li><Linkto to="/About" smooth duration={500} onClick={toggleDrawer}>About</Linkto></li>
-                <li><Linkto to="/Contact" smooth duration={500} onClick={toggleDrawer}>Contact</Linkto></li>
+                <li  onClick={handleShow}><Linkto>  Contact  </Linkto></li>
+                      <Contactme show={showModal} handleClose={handleClose} />   
               </ul>
             </div>
           </div>

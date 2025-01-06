@@ -52,7 +52,7 @@ export function Portfolio () {
     
     return (
      <Container>
-      <Row className=' text-center align-content-center'>
+      <Row className=' text-start align-content-center'>
       <div className='full-page text-center align-content-center'>
                 <motion.div className='inline Servicestxt '
                 initial={{ opacity: 1 ,}}
@@ -76,61 +76,55 @@ export function Portfolio () {
                 </SplitText>
                 </motion.div>
                 </div>
-        <Col>
-          <Carousel className=' pe-lg-5- pb-lg-5'>
-            {projects.map((project, index) => (
-              <Carousel.Item key={index}>
-                <div>
-                  {isMobileView ? (
-                    <div>
-                      <div className='text-start'>
-                        <h1 className='Question2 text-white'>{String(index + 1).padStart(2, '0')}.</h1>
-                        <h3 className='Question3 text-white'>{project.title}</h3>
-                      </div>
-                      <div className="image-container">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="img-fluid"
-                        />
-                        <div className="overlay">
-                          <p>{project.description}</p>
-                          <Link to={project.link}>Learn More</Link> {/* Button to navigate to the project page */}
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className='row'>
-                      <div className='col'>
-                        <div className='text-start'>
-                          <h1 className='worknum'>{String(index + 1).padStart(2, '0')}.</h1>
-                          <h3 className='Question3 text-white'>{project.title}</h3>
-                          <Link to={project.link}>
-                            <button className='m-1 p-2 pe-3 ps-3 rounded-5'>
-                              View Details
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                      <div className='col'>
-                        <div className="image-container">
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className="img-fluid"
-                          />
-                          <div className="overlay p-5">
-                            <p>{project.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Col>
+                <div className="container pt-5 pb-5">
+      <h1 className="Question3 text-white text-start">Previous Works</h1>
+      <div className="row row-cols-1 row-cols-lg-2">
+        {projects.map((project, index) => (
+          <div className='col'>
+          {isMobileView ? (
+            
+             <div key={index} className=" pb-5">
+              
+             <Link to={project.link} className="widget-content ">
+             <div className="widget-content  ">
+                   <h3 className=" Question3  text-white">{project.title}</h3>
+                   <div className="text-start">
+                     <p className=" text-white">
+                       {project.description}
+                     </p>
+                   </div>
+                 </div>
+             <div className='bg-black position-absolute blackoverlay '>asdsas</div>
+               <div
+                 className="widget-mobile "
+                 style={{ backgroundImage: `url(${project.image})`, color: 'white'}}
+               >
+                
+               </div>
+             </Link>
+           </div>
+          ) : (
+            <div key={index} className="col pt-5 pb-5 pe-5 text-center">
+            <Link to={project.link} className="widget-content">
+                  <h3 className="text-start text-white Question3 ">{project.title}</h3>
+              <div
+                className="widget"
+                style={{ backgroundImage: `url(${project.image})` }}
+              >
+               <div className="widget-overlay">
+                    <p className="widget-description text-white text-center">
+                      {project.description}
+                    </p>
+                  </div>
+              </div>
+             
+            </Link>
+          </div>
+          )}
+        </div>
+        ))}
+      </div>
+    </div>
       </Row>
     </Container>
     );
