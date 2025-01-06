@@ -25,24 +25,6 @@ const Services = () => {
       image: Adeptia,
       link: "/Adeptia",
     },
-    {
-      title: "SOLBooks",
-      description: "SOLBooks is an accounting application designed to help businesses manage their finances efficiently, providing tools for invoicing, expense tracking, and financial reporting.",
-      image: SOLBooks,
-      link: "/SOLBooks",
-    },
-    {
-      title: "YH&H Project",
-      description: "The YH&H Project is a project management website that streamlines team collaboration, task tracking, and project timelines.",
-      image: YHH,
-      link: "/Yh-h",
-    },
-    {
-      title: "Ekhtibary",
-      description: "Ekhtibary is a platform designed for managing educational assessments.",
-      image: Ekhtibary,
-      link: "/Ekhtibary",
-    },
   ];
 
   return (
@@ -94,6 +76,10 @@ const Services = () => {
         </div>
         ))}
       </div>
+      <Link to="portfolio">
+
+                        <button type="button" class="btn btn-dark m-2">See More.</button>
+                    </Link>
     </div>
   );
 };
