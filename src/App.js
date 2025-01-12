@@ -28,8 +28,6 @@ const App = () => {
           <Route path="/SOLbooks" element={<SOLbooks/>} />
           <Route path="/Ekhtibary" element={<Ekhtibary/>} />
           <Route path="/Yh-h" element={<YHHproject/>} />
-          <Route path="/Yh-h" element={<YHHproject/>} />
-          <Route path="/Yh-h" element={<YHHproject/>} />
         </Routes>
       </div>
     </Router>

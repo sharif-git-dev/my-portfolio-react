@@ -9,7 +9,7 @@ const AboutSection = () => {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
   return (
-    <div>
+    <div className="mt-5 pt-5">
       <div>
         {
          isMobileView ? (
